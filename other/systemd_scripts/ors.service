@@ -1,0 +1,16 @@
+[Unit]
+Description=OpenRouteService
+After=network.target
+
+[Service]
+User=zeiadbadawy
+WorkingDirectory=/home/zeiadbadawy/ors
+ExecStart=/usr/bin/java -Xms1g -Xmx2g -jar /home/zeiadbadawy/ors/ors.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

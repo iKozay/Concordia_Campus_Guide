@@ -1,0 +1,16 @@
+http://34.95.61.49 {
+    reverse_proxy /ors/* localhost:8080
+    reverse_proxy /otp/* localhost:8081
+}
+
+https://backend.ccgapp.com {
+    reverse_proxy localhost:8000
+}
+
+https://deploy.ccgapp.com {
+    reverse_proxy /webhook localhost:3000
+}
+
+https://get.ccgapp.com {
+    reverse_proxy /release/* localhost:3000
+}

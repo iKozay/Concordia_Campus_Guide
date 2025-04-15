@@ -1,0 +1,16 @@
+[Unit]
+Description=GitHub Webhook Listener
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/node /home/zeiadbadawy/webhook-listener/server.js
+WorkingDirectory=/home/zeiadbadawy/webhook-listener
+Restart=always
+User=zeiadbadawy
+Environment=NODE_ENV=production
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=webhook-listener
+
+[Install]
+WantedBy=multi-user.target

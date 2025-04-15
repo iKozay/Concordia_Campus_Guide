@@ -1,0 +1,26 @@
+# ORS v9.1.0 using Java 22.0.2
+server:
+    address: 127.0.0.1
+    port: 8080
+ors:
+    engine:
+        profile_default:
+            build:
+                source_file: montreal.pbf
+                elevation: true
+                service:
+                    maximum_distance: 100000
+                    maximum_visited_nodes: 1000000
+                    maximum_distance_alternative_routes: 100000
+        profiles:
+            driving-car:
+                enabled: true
+            cycling-regular:
+                enabled: true
+            foot-walking:
+                enabled: true
+            wheelchair:
+                enabled: true
+    endpoints:
+        routing:
+            enabled: true

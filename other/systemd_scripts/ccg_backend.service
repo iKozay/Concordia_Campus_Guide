@@ -1,0 +1,14 @@
+[Unit]
+Description=CCG Backend
+After=network.target
+
+[Service]
+User=zeiadbadawy
+WorkingDirectory=/home/zeiadbadawy/Concordia_Campus_Guide/ccg_backend
+ExecStart=/bin/bash -c "source /home/zeiadbadawy/miniconda/etc/profile.d/conda.sh && conda activate myenv && ./run_backend.sh"
+Restart=always
+RestartSec=5
+Environment="PATH=/home/zeiadbadawy/miniconda3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[Install]
+WantedBy=multi-user.target

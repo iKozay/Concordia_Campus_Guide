@@ -1,0 +1,16 @@
+[Unit]
+Description=OpenTripPlanner
+After=network.target
+
+[Service]
+User=zeiadbadawy
+WorkingDirectory=/home/zeiadbadawy/ors
+ExecStart=/usr/bin/java -Xmx2g -jar /home/zeiadbadawy/otp/otp.jar --port 8081 --bindAddress 127.0.0.1 --load /home/zeiadbadawy/otp/graph
+SuccessExitStatus=143
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

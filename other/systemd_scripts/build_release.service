@@ -1,0 +1,18 @@
+[Unit]
+Description=Build Frontend APK Release
+After=network.target
+
+[Service]
+User=zeiadbadawy
+WorkingDirectory=/home/zeiadbadawy/Concordia_Campus_Guide
+ExecStart=/bin/bash -c "/home/zeiadbadawy/build.sh"
+Environment="PATH=/home/zeiadbadawy/Android/Sdk/cmdline-tools/latest/bin:/home/zeiadbadawy/Android/Sdk/platform-tools:/home/zeiadbadawy/Android/Sdk/emulator:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="ANDROID_HOME=/home/zeiadbadawy/Android/Sdk"
+Environment="ANDROID_SDK_ROOT=/home/zeiadbadawy/Android/Sdk"
+#Restart=always
+#RestartSec=5
+
+
+[Install]
+WantedBy=multi-user.target
+
